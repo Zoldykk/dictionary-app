@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body{
+  background-color: #f7e19f;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container header {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  font-weight: bolder;
+  text-align: center;
+  color: #081236;
+}
+
+.container main {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #111a3f;
+  border-radius: 4px;
+  padding: 10px 0px;
+}
+
+.container form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 2px 7px;
+}
+
+.container form #wordInput {
+  width: 40vw;
+  padding: 20px 10px;
+  font-size: 20px;
+  border: none;
+  margin: 15px 0px;
+  flex: 1;
+}
+
+.container form #wordInput:focus {
+  outline: none;
+}
+
+.container form .searchBtn {
+  cursor: pointer;
+  width: 10vw;
+  height: 70px;
+  border: none;
+  background: #ceb050;
+  color: white;
+  font-weight: bolder;
+}
+
+.container form .searchBtn i {
+  font-size: 25px;
+}
+
+.container .wordInfo {
+  width: 83%;
+  color: white;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  display: flex;
+  flex-direction: column;
+}
+
+.container .wordInfo audio,#wordMeaning,#wordIpa{
+  margin: 7px 0px;
+}
+
+.container .wordInfo .errorBox{
+  color: red;
+}
+
+
+@media screen and (max-width: 768px) {
+  main{
+    min-width: 98vw;
+  }
+
+  #wordInput{
+    min-width: 70vw;
+  }
+
+  .searchBtn{
+    min-width: 20vw;
+  }
+
+  .wordInfo{
+    min-width: 90vw;
+  }
+}
