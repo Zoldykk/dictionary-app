@@ -53,6 +53,8 @@ body{
   border: none;
   margin: 15px 0px;
   flex: 1;
+  border-radius: 0;
+  -webkit-appearance: none;
 }
 
 .container form #wordInput:focus {
