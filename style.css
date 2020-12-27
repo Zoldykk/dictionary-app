@@ -55,6 +55,7 @@ body{
   flex: 1;
   border-radius: 0;
   -webkit-appearance: none;
+  -webkit-border-radius: 0;
 }
 
 .container form #wordInput:focus {
