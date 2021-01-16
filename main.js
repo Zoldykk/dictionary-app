@@ -14,16 +14,19 @@ form.addEventListener('submit', (e) =>{
 searchBtn.addEventListener('click', () =>{
     if(wordInput.value == ''){
         errorBox.innerHTML = 'Input is Empty'
+        wordMeaning.innerHTML = '';
+        wordIpa.innerHTML = '';
+        audio.removeAttribute('controls')
     }else{
         fetch(`https://www.dictionaryapi.com/api/v3/references/learners/json/${wordInput.value}?key=f1ccae41-c4a6-49db-91d6-85a46d8d31f8`)
         .then(response => response.json())
         .then(data =>{
-            if(data.length <= 0){
+            if(data.length == 0){
                 errorBox.innerHTML = 'OOPS!! Make sure to spell the word correctly';
                 wordMeaning.innerHTML = '';
                 wordIpa.innerHTML = '';
                 audio.removeAttribute('controls')
-            }else {
+            }else{
                 wordMeaning.innerHTML = data[0].shortdef[0];
                 wordIpa.innerHTML = `Ipa: ${data[0].hwi.prs[0].ipa}`;
                 const audioName = data[0].hwi.prs[0].sound.audio;
@@ -33,7 +36,7 @@ searchBtn.addEventListener('click', () =>{
                 audio.setAttribute('class', 'audio')
                 wordInfo.appendChild(audio)
                 errorBox.innerHTML = ''
-            }  
+            }
         });
     }
     
